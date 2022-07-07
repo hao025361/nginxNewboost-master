@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <string.h>
+#include <iostream>
 
 #include "ngx_c_conf.h"  //和配置文件处理相关的类,名字带c_表示和类有关
 #include "ngx_signal.h"
@@ -26,7 +27,16 @@ int main(int argc, char *const *argv)
         printf("配置文件载入失败，退出!\n");
         exit(1);
     }
-    
+
+    //获取配置文件信息测试代码
+    // int port = p_config->GetIntDefault("ListenPort",0);//0是缺省值
+    // std::cout<<"port="<<port<<"\n"<<std::endl;
+    // const char *pDBInfo = p_config->GetString("DBInfo");
+    // if(pDBInfo != NULL)
+    // {
+    //     std::cout<<"DBInfo="<<pDBInfo<<"\n"<<std::endl;
+    // }
+
     /*for (int i = 0; environ[i]; i++)
     {
         printf("evriron[%d]地址=%x    " ,i,(unsigned int)((unsigned long)environ[i]));
